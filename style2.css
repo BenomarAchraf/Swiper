@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #060913;
+  color: #fff;
+  overflow: hidden;
+
+}
+.particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.layoutpacks{
+
+}
+
+.packs{
+  display: flex;
+  flex-direction: column;
+  gap : 3rem;
+  margin-top: -4rem;
+  transition: 1s;
+}
+.pack_child{
+  display: grid;
+  grid-template-columns: 30rem 8rem;
+  gap: 2rem;
+  border: 2px solid #fff;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #060913;
+
+}
+.pack_child_text{
+  padding: 10px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap : .5rem;
+}
+.pack_child_text > h1{
+  
+}
+
+
+.pack_child_price{
+ align-content: center;
+ text-align: center;
+ font-size: 40px;
+  font-weight: 600;
+}
+
+.pack_child:hover{
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 1px 1px 50px 1px rgba(25, 43, 206, 0.6);
+
+}
+.pack_child:hover > .pack_child_text > h1{
+  color: #FF9900;
+}
+.pack_child:hover > .pack_child_price > span{
+  color: #FF9900;
+}
+
+.hoverpack{
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 1px 1px 50px 1px rgba(25, 43, 206, 1);
+
+}
+.hoverpack > .pack_child_text > h1{
+  color: #FF9900;
+}
+.hoverpack > .pack_child_price > span{
+  color: rgb(255, 153, 0);
+}
+
+.icon-creativity2{
+  position: absolute;
+  top: 6%;
+  display: flex;
+  justify-content: center;
+}
+
+.Offers_title{
+  font-size: 70px;
+  position: relative;
+  top: -2rem;
+  margin-bottom: 5%;
+
+}
+.Offers_title > p{
+  
+  box-shadow: 0px 10px 0px rgba(255, 153, 0,.5);
+
+}
+
+
+.button {
+  width:250px;
+  height:80px;
+  position: relative;
+  display: flex;
+  font-size: 40px;
+  font-weight: 200;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(136, 8, 31);
+  cursor: pointer;
+  box-shadow: 0px 0px 5px  rgba(255,255,255,0.6);
+  transition: 1s;
+  animation: translation .2s ease-in-out;
+
+}
+
+@keyframes translation {
+  0%    {top:100px;   opacity: 0;}
+  100%  {top:0px; opacity: 1;}
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: calc(230px / cos(45deg));
+  height: 14px;
+  background: repeating-linear-gradient(-45deg,#b8b507 0 15px,#0000 0 20px) left/200% 100%;
+  animation: l3 10s infinite linear;
+}
+@keyframes l3 {
+    100% {background-position:right}
+}
+
+.payment{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  font-size: 25px;
+  font-weight: 200;
+  transition: 1s;
+
+}
+.payment > h2{
+  margin-bottom: 5%;
+}
+
+

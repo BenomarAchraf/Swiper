@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #060913;
+  color: #fff;
+  overflow: hidden;
+
+}
+.icon-creativity2{
+    position: absolute;
+    top: 6%;
+    display: flex;
+    justify-content: center;
+  }
+
+.particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+.Layout {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.affichagebtns{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: max-content;
+    gap: 10%;
+}
+
+.button {
+    width:250px;
+    height:80px;
+    position: relative;
+    text-align: center ;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: unset;    
+    align-items: center;
+    justify-content: center;
+    background-color: var(--col);
+    color: var(--var);
+    cursor: pointer;
+    box-shadow: 0px 0px 10px  rgba(136, 8, 31,0.8);
+    transition: 1s;
+    animation: translation .2s ease-in-out;
+  
+  }
+
+  @keyframes translation {
+    0%    {top:100px;   opacity: 0;}
+    100%  {top:-200px; opacity: 1;}
+  }
+
+.validatebtn:hover > button {
+    background-color:  rgba(136, 8, 31,1);
+}
+
+.CamLayout {
+    margin-top: var(--var);
+    width: 640px;
+    height: 580px;
+      background: linear-gradient(#060913, #060913) padding-box,
+      linear-gradient(90deg,#ffffff, #060913, #ffffff) border-box;
+      border: 15px solid transparent;
+      border-radius: 100px;
+    object-fit: cover;
+    
+    box-shadow: -2px 5px 5px 10px rgba(25, 43, 206, 0.6);
+
+
+}
+
+.CamLayoutResult {
+    display: none;
+    width: 640px;
+    height: 580px;
+      background: linear-gradient(#060913, #060913) padding-box,
+      linear-gradient(90deg,#ffffff, #060913, #ffffff) border-box;
+      border: 15px solid transparent;
+      border-radius: 100px;
+    object-fit: cover;
+    position: relative;
+    box-shadow: -2px 5px 5px 10px rgba(25, 43, 206, 0.6);
+    transition: 1s;
+     animation: translation .2s ease-in-out;
+    transform: translateY(0%);
+}
+
+@keyframes translation {
+  0%    {top:100px;   opacity: 0;}
+  100%  {top:0px; opacity: 1;}
+}
+
+.ReadyCapture{
+    position: absolute;
+    top: 20%;
+    font-size: 45px;
+    font-weight: 350;
+    background-color: #060913;
+    box-shadow: 0px 8px  rgba(25, 43, 206, 0.6);
+  
+  }
+
+
+
+#countdown {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    margin: auto;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    
+  }
+  
+  #countdown-number {
+    color: white;
+    display: inline-block;
+    font-size: 80px;
+    display: flex;
+    margin-top: 12%;
+    margin-left: 9%;
+    justify-content: center;
+    align-content: center;
+    transition: 1s;
+    line-height: 100px;
+    animation: countdowntext 5s linear forwards;
+  }
+  @keyframes countdowntext {
+    from {
+      color: #fff;
+    }
+    50% {
+      color: #bbacac;
+    }
+    to{
+      color: #ffffff;
+    }
+  }
+  
+  
+  
+  
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px; /* Adjust width and height to fit the new circle size */
+    height: 120px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+  }
+  
+  svg circle {
+    background-color: #060913;
+    stroke-dasharray: 314px;  /* Updated value */
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 10px;
+    stroke:  #6a5bcd;
+    fill: none;
+    animation: countdown 5s linear forwards;
+  }
+  
+  @keyframes countdown {
+    from {
+      stroke: #ff7f50;
+      stroke-dashoffset: 314px;  /* Updated value */
+    }
+    50% {
+      stroke:  #cbf300;
+    }
+    to{
+      stroke-dashoffset: 0px;
+      stroke:  #f61313;
+    }
+  }
+  
+
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .kbdlayout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #060913;
+    
+  }
+  
+  .fLine{
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+  }
+  
+  .kbdletter{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    font-size: 36px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+  
+  .kbdnumber{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    font-size: 36px;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+  
+  .Del{
+    width: 80px;
+    background-color: #88081F;
+  }
+  
+  .Space{
+    width: 40%;
+    background-color: rgba(25, 43, 206, 0.6);
+  }
+  
+  .Up{
+    width: 120px;
+    background-color:#FF9900;
+  }
+  
+  
+  .inputTextlayout{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  
+  .inputText{
+    width: 60%;
+    padding: 5px 12px;
+    padding-left: 20px;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 50px;
+    color: #060913;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid #e1e4e8;
+    border-radius: 15px;
+    outline: none;
+    box-shadow: rgba(225, 228, 232, 0.2) 0px 1px 0px 0px inset;
+    :focus{
+        border-color: #0366d6;
+        outline: none;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    }
+    
+  }
+  
+  .Confirmed {
+    width:250px;
+    height:80px;
+    font-size: 40px;
+    display: flex;
+    font-weight: 200;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(136, 8, 31);
+    cursor: pointer;
+    box-shadow: 0px 0px 5px  rgba(255,255,255,0.6);
+  
+  }
+
+
+  
+  @keyframes translationConfirmed {
+    0%    {top:100%;   opacity: 0;}
+    100%  {top:85%; opacity: 1;}
+  }
+
+  #Confirm{
+    position: absolute;
+    top: 85%;
+    transition: 1s;
+    animation: translationConfirmed  .2s ease-in-out;
+
+  }
+
+ 
+
+  .Layoutforkbd{
+    position: absolute;
+    top: 55%;
+    transition: 1s;
+  }

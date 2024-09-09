@@ -4,8 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div id="particles-js" class="particles"></div>
+    <div class="icon-creativity2">
+        <img 
+      src="icon.png"
+      alt=""
+    />
     
+      </div>
+      <div class="Offers_title">
+         <p>Choose an Offer</p>
+    </div>
+        <div class="packs">
+            <div id="pack1" class="pack_child" onclick="activeSelction('pack1')">
+                
+                <div class="pack_child_text">
+                    <h1>
+                        First Pack
+                    </h1>
+                    <p> Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. </p>
+                </div>
+                <div class="pack_child_price">
+                    20<span>$</span>
+                </div>
+                
+            </div>
+            <div id="pack2" class="pack_child" onclick="activeSelction('pack2')">
+                
+                <div class="pack_child_text">
+                    <h1>
+                        First Pack
+                    </h1>
+                    <p> Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. </p>
+                </div>
+                <div class="pack_child_price">
+                    20<span>$</span>
+                </div>
+                
+            </div>
+            <div id="pack3" class="pack_child" onclick="activeSelction('pack3')">
+                
+                <div class="pack_child_text">
+                    <h1>
+                        First Pack
+                    </h1>
+                    <p> Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. </p>
+                </div>
+                <div class="pack_child_price">
+                    20<span>$</span>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="validate" style="display:none;" onclick="Clicker()">
+        <div  class="button"> Confirm </div>
+    </div>
+    <div id="loader" class="payment" style="display:none;">
+        <h2> ...Payment in Process </h2>
+        <div  class="loader"></div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        var clicked=true;
+        //        <button onclick="goToPage2()">dsfsqdfqsf</button>
+        //const username = localStorage.getItem('username');
+            //alert(username);
+        function activeSelction(idvalue) {
+            if(clicked){
+                console.log("clicked");
+                const pages = document.querySelectorAll('.pack_child');
+    pages.forEach(page => {
+      page.classList.remove('hoverpack');
+    });
+            const styl = document.getElementById(idvalue);
+            styl.classList.add('hoverpack');
+            document.getElementById('validate').style.display = 'block';
+            }
+
+            
+        }
+        function attendre(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+        async function Clicker(){
+            clicked= false;
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('validate').style.display = 'none';
+            await attendre(5000);
+            window.location.href = 'index1.html';
+        }
+      </script>
 </body>
 </html>

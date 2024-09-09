@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style5.css" />
+
+</head>
+<body>
+   
+      <div id="particles-js" class="particles5"></div>
+    <div id="icon-creativity3" class="icon-creativity3">
+      <img 
+    src="icon.png"
+    alt=""
+  />
+  
+    
+    </div>
+    <div id="result" class="result" >
+      <img class="imageresult" id="imageresult" src="./lightx/superwomen.jpg" alt="" />
+    </div>
+    
+
+    <div id="videoback" class="video-background5">
+        <video autoplay muted loop playsinline>
+          <source src="./lightx/1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+      <script>
+        function attendre(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+        var resultatImg="";
+        const imageUrl = localStorage.getItem('url');
+        const textPrompt = localStorage.getItem('text');
+        const styleImageUrl= "";
+        const API_AVATAR = "http://localhost:3000/api/avatar";
+        const API="http://localhost:3000/api";
+
+        async function getAvatar() {
+          
+          const response = await axios.post(API_AVATAR,
+        {
+          imageUrl,
+          styleImageUrl,
+          textPrompt
+        });
+        console.log(response.data)
+        if(response.data){
+          const orderId = response.data;
+          let t1= false;
+          while(!t1){
+        console.log("requesting the"+orderId);
+        const res1 = await axios.post(
+        API,
+      {
+        "orderId": orderId
+      }
+      
+    );
+        console.log(res1.data.body.output);
+        
+        if(res1.data.body.output){
+            const test=res1.data.body.output;
+            console.log(test);
+            resultatImg=test;
+            t1= true;
+            
+        }
+        else{
+          await attendre(5000);
+
+        }
+      }
+
+      document.getElementById("videoback").style.display="none";
+      document.getElementById("icon-creativity3").style.display="flex";
+      console.log(resultatImg);
+      document.getElementById("imageresult").src=resultatImg;
+      await attendre(1000);
+      document.getElementById("result").style.display="flex";
+        }
+
+        }
+
+        getAvatar();
+        //style="display: none;"
+
+      </script>
+</body>
+</html>

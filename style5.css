@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #060913;
+  color: #fff;
+  overflow: hidden;
+
+}
+.icon-creativity3{
+    position: absolute;
+    top: 6%;
+    display: none; /**/
+    justify-content: center;
+  }
+
+.particles5 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+
+  .video-background5 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+  
+  .result{
+    width: 50rem;
+    aspect-ratio: 12/16;
+    display: none; /**/
+    justify-content: center;
+    align-content: center;
+  }
+
+  .imageresult{
+    display: block;
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  user-select: none;
+  object-fit: cover;
+  border: 30px double #fff;
+  transition: all 3s;
+  filter: grayscale(0);
+  animation: translationxl 5s ease-in-out;
+
+}
+
+@keyframes translationxl {
+  0%    { filter: grayscale(100%);  opacity: 0; height: 50%; object-fit: scale-down;}
+  50%    { filter: grayscale(100%);  opacity: 0; height: 50% ; object-fit: scale-down;}
+  100%  { filter: grayscale(0%); opacity: 1; height: 100%;  object-fit: cover;
+  }
+}

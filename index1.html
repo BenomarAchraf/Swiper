@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <div id="particles-js" class="particles"></div>
+    <div class="icon-creativity2">
+      <img 
+    src="icon.png"
+    alt=""
+  />
+  
+    </div>
+    <div id="ReadyCapture" class="ReadyCapture" style="display: block;">
+      ... Ready, Click Capture
+    </div>
+    <div id="countdown" style="display: none;">
+      <div id="countdown-number"></div>
+      <svg>
+          <circle r="50" cx="55" cy="55"></circle>
+        </svg>
+    </div>
+    
+    <div class="">
+      <div>
+        <div class="Layout">
+            <video class="CamLayout" id="videoElement" style="--var : 0% "></video>
+            <div class="affichagebtns">
+              <div id="CapturebtnContainer" class="Capturebtn"  style="display: block;">
+                  <button id="captureButton" class="button" style="--var : #060913 ; --col: #fff">Capture</button>
+              </div>
+              <div id="validateBtnContainer" class="validatebtn"  style="display: none;">
+                  <button id="validateButton" class="button" style=" --var : #fff ; --col: #060913">Confirm</button>
+              </div>
+          </div>
+            <canvas id="canvasElement" class="CamLayoutResult"  style="--var : 0% " ></canvas>
+        </div>
+
+        
+    </div>
+
+    </div>
+
+    <div id="Layoutforkbd" class="Layoutforkbd" style="display: none;">
+      <div class="inputTextlayout"> 
+        <input class="inputText" id="inputText" placeholder="Name"></input>
+      </div>
+      <div class="kbdlayout">
+        
+        <div class="fLine">
+            <div class="kbdnumber" onclick="writeselected('0')">0</div>
+            <div class="kbdnumber" onclick="writeselected('1')">1</div>
+            <div class="kbdnumber" onclick="writeselected('2')">2</div>
+            <div class="kbdnumber" onclick="writeselected('3')">3</div>
+            <div class="kbdnumber" onclick="writeselected('4')">4</div>
+            <div class="kbdnumber" onclick="writeselected('5')">5</div>
+            <div class="kbdnumber" onclick="writeselected('6')">6</div>
+            <div class="kbdnumber" onclick="writeselected('7')">7</div>
+            <div class="kbdnumber" onclick="writeselected('8')">8</div>
+            <div class="kbdnumber" onclick="writeselected('9')">9</div>
+            <div class="kbdnumber Del" onclick="clearText()">Del</div>
+        </div>
+        <div class="fLine">
+            <div class="kbdletter" onclick="writeselected('q')">q</div>
+            <div class="kbdletter" onclick="writeselected('w')">w</div>
+            <div class="kbdletter" onclick="writeselected('e')">e</div>
+            <div class="kbdletter" onclick="writeselected('r')">r</div>
+            <div class="kbdletter" onclick="writeselected('t')">t</div>
+            <div class="kbdletter" onclick="writeselected('y')">y</div>
+            <div class="kbdletter" onclick="writeselected('u')">u</div>
+            <div class="kbdletter" onclick="writeselected('i')">i</div>
+            <div class="kbdletter" onclick="writeselected('o')">o</div>
+            <div class="kbdletter" onclick="writeselected('p')">p</div>
+        </div>
+        <div class="fLine">
+            <div class="kbdletter" onclick="writeselected('a')">a</div>
+            <div class="kbdletter" onclick="writeselected('s')">s</div>
+            <div class="kbdletter" onclick="writeselected('d')">d</div>
+            <div class="kbdletter" onclick="writeselected('f')">f</div>
+            <div class="kbdletter" onclick="writeselected('g')">g</div>
+            <div class="kbdletter" onclick="writeselected('h')">h</div>
+            <div class="kbdletter" onclick="writeselected('j')">j</div>
+            <div class="kbdletter" onclick="writeselected('k')">k</div>
+            <div class="kbdletter" onclick="writeselected('l')">l</div>
+        </div>
+        
+        <div class="fLine">
+            <div class="kbdnumber Up" onclick="toggleCase()">Upper</div>
+        <div class="kbdletter" onclick="writeselected('z')">z</div>
+        <div class="kbdletter" onclick="writeselected('x')">x</div>
+        <div class="kbdletter" onclick="writeselected('c')">c</div>
+        <div class="kbdletter" onclick="writeselected('v')">v</div>
+        <div class="kbdletter" onclick="writeselected('b')">b</div>
+        <div class="kbdletter" onclick="writeselected('n')">n</div>
+        <div class="kbdletter" onclick="writeselected('m')">m</div>
+        
+        </div>
+        <div class="fLine">
+            
+            <div class="kbdnumber Space" onclick="writeselected(' ')">Space</div>
+        
+        </div>
+      </div>
+
+
+     
+        
+      </div>
+      
+    </div>
+
+    <div id="Confirm" style="display:none;" onclick="goToPage()">
+      <div  class="Confirmed"> Confirm </div>
+  </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+      var text = document.getElementById('inputText');
+  var isUppercase = false;
+  
+  // Function to write characters
+  function writeselected(char) {
+    const value= text.value;
+    if(isUppercase){
+      text.value= value+char.toUpperCase();
+    }
+    else{
+      text.value= value+char;
+    }
+    document.getElementById("Confirm").style.display= "block";
+    
+  }
+  
+  function toggleCase() {
+      isUppercase = !isUppercase;
+      const lettres = document.querySelectorAll('.kbdletter');
+      if (isUppercase) {       
+          lettres.forEach(lettre => {
+        lettre.classList.add('uppercase');
+      });
+    }
+    else{
+      lettres.forEach(lettre => {
+        lettre.classList.remove('uppercase');
+      });
+    }
+    document.querySelector('.Up').textContent = isUppercase ? 'Lower' : 'Upper';
+    
+  }
+  
+  // Function to clear text
+  function clearText() {
+      text.value = '';
+      document.getElementById("Confirm").style.display= "none";
+  
+  }
+        
+      </script>
+    <script  type="module" >
+
+      
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-storage.js"
+
+
+function Countdox(){
+            document.getElementById("countdown").style.display = 'block';
+            var countdownNumberEl = document.getElementById('countdown-number');
+var countdown = 5;
+
+countdownNumberEl.textContent = countdown;
+
+
+const intervalId = setInterval(function() {
+    countdown = --countdown <= 0 ? 0 : countdown;
+  countdownNumberEl.textContent = countdown;
+  if(countdown ==0){
+    document.getElementById("countdown").style.display = 'none';
+    takePhoto();
+    clearInterval(intervalId); 
+  }
+}, 1000);
+
+        }
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBrfWfJmjBU2wtSE73zy8pY4MqTxPOZhaw",
+  authDomain: "photobooth-466c7.firebaseapp.com",
+  projectId: "photobooth-466c7",
+  storageBucket: "photobooth-466c7.appspot.com",
+  messagingSenderId: "227534738005",
+  appId: "1:227534738005:web:b5eeb6115ac54e46143adc"
+};
+
+  const app = initializeApp(firebaseConfig);
+  const storage = getStorage(app);
+  
+
+  const videoElement = document.getElementById('videoElement');
+  const canvasElement = document.getElementById('canvasElement');
+  const captureButton = document.getElementById('captureButton');
+  const validateButton = document.getElementById('validateButton');
+  const validateBtnContainer = document.getElementById('validateBtnContainer');
+  const capturebtnContainer   = document.getElementById('CapturebtnContainer'); 
+  let dataURL = "";
+ 
+  navigator.mediaDevices.getUserMedia({ video: true })
+      .then((stream) => {
+          videoElement.srcObject = stream;
+          videoElement.play();
+      })
+      .catch((error) => {
+          console.error("Error accessing camera: ", error);
+      });
+  
+  function takePhoto() {
+      const context = canvasElement.getContext('2d');
+      canvasElement.width = videoElement.videoWidth;
+      canvasElement.height = videoElement.videoHeight;
+      context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+      dataURL = canvasElement.toDataURL('image/png');
+      canvasElement.style.display = 'block';
+      validateBtnContainer.style.display = 'block';
+      captureButton.innerText= 'Retake';
+      videoElement.style="--var: 40%";
+  }
+  
+  function dataURLtoFile(dataUrl, fileName) {
+      const arr = dataUrl.split(',');
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const bstr = atob(arr[1]);
+      let n = bstr.length;
+      const u8arr = new Uint8Array(n);
+      while (n--) {
+          u8arr[n] = bstr.charCodeAt(n);
+      }
+      return new File([u8arr], fileName, { type: mime });
+  }
+  
+  function attendre(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+  
+  async function uploadImage() {
+    capturebtnContainer.style.display = 'none';
+    validateBtnContainer.style.display = 'none';
+    videoElement.style.display= 'none';
+    const file = dataURLtoFile(dataURL, 'image.png'); 
+    const storageRef = ref(storage, 'images/' + file.name);
+    await uploadBytes(storageRef, file);
+    const url = await getDownloadURL(storageRef);
+    
+      console.log("Image uploaded successfully. URL:", url);
+      localStorage.setItem('url', url);
+  }
+  
+  captureButton.addEventListener('click', async () => {
+    document.getElementById("ReadyCapture").style.display = 'none';
+    canvasElement.style.display = 'none';
+    videoElement.style="--var: 0%";
+    if(captureButton.innerText== 'Retake'){
+      await attendre(3000);
+    }
+    Countdox();
+  });
+  
+  validateButton.addEventListener('click', () => {
+    canvasElement.style.transition = '.5s';
+    canvasElement.style.transform = 'translateY(-300px)';
+    document.getElementById("Layoutforkbd").style.display= 'block';
+      uploadImage();
+  });
+  
+
+
+    </script>
+
+    <script>
+      function goToPage() {
+        window.location.href = 'index4.html';
+      }
+    </script>
+  </body>
+</html>
