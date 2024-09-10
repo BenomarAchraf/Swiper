@@ -1,6 +1,6 @@
 const data = [
     {   
-        personnage: "blazer",
+        personnage: "deepblazer",
         prompt:"portrait of a man wearing blazer with deep navy with a subtle sheen paired with a crisp white shirt with high-end restaurant with elegant decor and soft, ambient lighting background",
         src: "https://d3aa3s3yhl0emm.cloudfront.net/aiavatar/0954fc6a-835d-40f4-8b26-f3e888254301.jpg",
     },
@@ -42,9 +42,54 @@ const data = [
         src: "https://d3aa3s3yhl0emm.cloudfront.net/aiavatar/c085e77c-9059-4af2-a2dd-978af8c69c21.jpg",
     } ,
     {   
-        personnage: "sciencefiction",
-        prompt:"portrait of a magical Wisdom god, energy bolts, sparkles, lights, blue skinned man, huge glowing yellow eyes, short dark hair, flowing hair, 8k resolution concept art portrait",
-        src: "https://d3aa3s3yhl0emm.cloudfront.net/aiavatar/c085e77c-9059-4af2-a2dd-978af8c69c21.jpg",
+        personnage: "kuwaitwoman",
+        prompt:"portrait of a kuwait woman style Outfit with city background, 8k resolution concept art portrait",
+        src: "",
+    },
+    {   
+        personnage: "blazer",
+        prompt:"portrait of a man wearing blazer with navy with a subtle sheen paired with a crisp white shirt with high-end restaurant with elegant decor and soft, ambient lighting background",
+        src: "",
+    },
+    {   
+        personnage: "oldkuwaitwomen",
+        prompt:"portrait of an Old 90s kuwait woman style Outfit with city background, with an elegant decor and soft, ambient lighting background",
+        src: "",
+    },
+    {   
+        personnage: "spiderwomen",
+        prompt:"portrait of a spider woman Outfit with city background , with an elegant decor and soft, ambient lighting background",
+        src: "",
     }
+    ,
+    {   
+        personnage: "superwoman",
+        prompt:"portrait of a super woman Outfit with city background , with an elegant decor and soft, ambient lighting background",
+        src: "",
+    },
+    {   
+        personnage: "superman",
+        prompt:"portrait of a super man Outfit with city background , with an elegant decor and soft, ambient lighting background",
+        src: "",
+    },
+    {   
+        personnage: "spidermen",
+        prompt:"portrait of a spider woman Outfit with city background , with an elegant decor and soft, ambient lighting background",
+        src: "",
+    }
+    ,
+    {   
+        personnage: "oldkuwaiti",
+        prompt:"portrait of an Old 90s kuwait man's Outfit with city background , with an elegant decor and soft, ambient lighting background",
+        src: "",
+    }
+    ,
+    {   
+        personnage: "Kuwaitiman",
+        prompt:"portrait of kuwait man's Outfit with city background , with an elegant decor and soft, ambient lighting background",
+        src: "",
+    }
+
+
 
 ]
